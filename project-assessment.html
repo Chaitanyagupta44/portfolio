@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oral Briefing Assessment for UK Government | Chaitanya Gupta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; background-color: #fdfaf6; color: #2a2019; line-height: 1.6; }
+        
+        nav { position: fixed; top: 0; left: 0; right: 0; background-color: rgba(253, 250, 246, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(139, 102, 71, 0.1); padding: 1.5rem 2rem; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .back-link { display: flex; align-items: center; gap: 0.5rem; color: #8b6647; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        .back-link:hover { color: #6a5240; }
+        .logo { font-family: 'Crimson Text', serif; font-size: 1.5rem; font-weight: 600; color: #8b6647; }
+        
+        .hero { padding: 10rem 2rem 4rem; max-width: 900px; margin: 0 auto; }
+        .project-tag { display: inline-block; padding: 0.5rem 1rem; background-color: #f8f4ed; color: #8b6647; border-radius: 20px; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1.5rem; }
+        h1 { font-family: 'Crimson Text', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 600; color: #2a2019; line-height: 1.2; margin-bottom: 1.5rem; }
+        .hero-meta { display: flex; flex-wrap: wrap; gap: 2rem; color: #6a5a4a; font-size: 0.95rem; margin-bottom: 2rem; }
+        .hero-meta-item { display: flex; flex-direction: column; }
+        .hero-meta-label { font-weight: 600; color: #8b6647; margin-bottom: 0.25rem; }
+        .lead { font-size: 1.2rem; color: #5a4a3a; line-height: 1.7; margin-bottom: 3rem; }
+        
+        .content { max-width: 900px; margin: 0 auto; padding: 0 2rem 6rem; }
+        .section { margin-bottom: 4rem; }
+        h2 { font-family: 'Crimson Text', serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 600; color: #2a2019; margin-bottom: 1.5rem; }
+        h3 { font-family: 'Crimson Text', serif; font-size: 1.5rem; font-weight: 600; color: #2a2019; margin-bottom: 1rem; margin-top: 2rem; }
+        p { font-size: 1.05rem; line-height: 1.8; color: #5a4a3a; margin-bottom: 1.5rem; }
+        
+        .highlight-box { background-color: #f8f4ed; border-left: 4px solid #8b6647; padding: 1.5rem; margin: 2rem 0; border-radius: 4px; }
+        .highlight-box p:last-child { margin-bottom: 0; }
+        ul, ol { margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        li { font-size: 1.05rem; line-height: 1.8; color: #5a4a3a; margin-bottom: 0.5rem; }
+        
+        .deliverables-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .deliverable-card { background-color: #f8f4ed; padding: 1.5rem; border-radius: 8px; border-top: 3px solid #8b6647; }
+        .deliverable-card h4 { font-family: 'Crimson Text', serif; font-size: 1.2rem; color: #2a2019; margin-bottom: 0.75rem; }
+        .deliverable-card p { font-size: 0.95rem; margin-bottom: 0; }
+        
+        .project-image { width: 100%; height: 400px; background-color: #e8dfd5; border-radius: 8px; margin: 3rem 0; overflow: hidden; }
+        .project-image img { width: 100%; height: 100%; object-fit: cover; }
+        
+        footer { padding: 3rem 2rem; background-color: #f8f4ed; border-top: 1px solid rgba(139, 102, 71, 0.1); text-align: center; color: #6a5a4a; font-size: 0.9rem; }
+        
+        @media (max-width: 768px) {
+            .hero-meta { gap: 1rem; }
+            .deliverables-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Portfolio
+            </a>
+            <div class="logo">CG</div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="project-tag">Performance & Assessment</div>
+        <h1>Oral Briefing Assessment for UK Government Policy Recruitment</h1>
+        
+        <div class="hero-meta">
+            <div class="hero-meta-item"><span class="hero-meta-label">Client</span><span>UK Government Department</span></div>
+            <div class="hero-meta-item"><span class="hero-meta-label">Duration</span><span>6 months</span></div>
+            <div class="hero-meta-item"><span class="hero-meta-label">Role</span><span>Internal Consultant</span></div>
+        </div>
+
+        <p class="lead">Designing a fair and accessible verbal communication assessment tool for recruiting policy roles in the UK civil service, with a focus on assessing candidate potential over experience while reducing adverse impact on minority candidates.</p>
+    </section>
+
+    <div class="content">
+        <section class="section">
+            <h2>The Challenge</h2>
+            <p>A senior stakeholder in a UK government department responsible for the policy profession approached me with a critical need: to develop an assessment that could evaluate candidates' ability to communicate complex policy information to senior stakeholders, including ministers, while ensuring the recruitment process was fair and accessible to all candidates.</p>
+            
+            <div class="highlight-box">
+                <p><strong>The client's core requirements were:</strong></p>
+                <ul style="margin-bottom: 0;">
+                    <li>Assess potential over past experience</li>
+                    <li>Reduce adverse impact perceived by minority candidates through fairness and accessibility-oriented design</li>
+                    <li>Create a tool usable across multiple job grades</li>
+                    <li>Deliver within a six-month timeline</li>
+                </ul>
+            </div>
+
+            <p>This project was particularly challenging because it required navigating the tension between assessing job-relevant competencies while avoiding barriers that might disadvantage candidates with neurodiverse conditions or from underrepresented backgrounds.</p>
+        </section>
+
+        <div class="project-image"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&auto=format&fit=crop" alt="Assessment Design"></div>
+
+        <section class="section">
+            <h2>My Approach</h2>
+            
+            <h3>Contracting & Scope Management</h3>
+            <p>The initial scope proposed by the client was ambitious-they wanted assessments measuring multiple competencies including "big-picture thinking" and creativity. Recognizing this was beyond my competence to deliver ethically within the timeline, I applied Block's Flawless Consulting principles to push back and renegotiate.</p>
+            <p>Using Socratic questioning ("How did you identify the need for these assessments?"), I discovered that the competencies had been identified by a working group of senior leaders rather than through formal job analysis. This insight allowed me to have an honest conversation about scope limitations and my ethical responsibilities under HCPC Standards.</p>
+
+            <h3>Evidence-Based Tool Selection</h3>
+            <p>I systematically reviewed assessment methods to identify the most appropriate tool format. After appraising work sample tests, structured interviews, and presentation exercises against criteria of validity, accessibility, and context fit, I selected the Oral Briefing Assessment (OBA) format.</p>
+            <p><strong>Why OBA?</strong> This format asks candidates to digest written information and verbally brief an assessor, mirroring the actual job demands of policy roles. It offered high work sample validity while being more accessible than written exercises for candidates with certain learning differences.</p>
+
+            <h3>Designing for Fairness & Accessibility</h3>
+            <p>Reducing adverse impact was central to the entire design process. I applied multiple evidence-based strategies:</p>
+            <ul>
+                <li><strong>Cognitive load management:</strong> Ensured all materials were readable at an 11-year-old reading level (Flesch-Kincaid Grade 7-8)</li>
+                <li><strong>Neurodiversity considerations:</strong> Designed the assessment structure to minimize working memory demands and provide clear, predictable formats</li>
+                <li><strong>Universal design principles:</strong> Created materials with sufficient white space, clear typography, and logical information hierarchy</li>
+                <li><strong>Behaviorally-anchored scoring:</strong> Developed detailed scoring matrices that focused on observable behaviors rather than subjective judgments</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Deliverables</h2>
+            <div class="deliverables-grid">
+                <div class="deliverable-card">
+                    <h4>Oral Briefing Assessment Tool</h4>
+                    <p>Complete assessment package including candidate briefs, assessor materials, and administration guidance for both junior and senior policy roles.</p>
+                </div>
+                <div class="deliverable-card">
+                    <h4>Behaviorally-Anchored Scoring Matrices</h4>
+                    <p>Detailed competency frameworks with observable behavioral indicators at multiple performance levels, ensuring consistent and fair scoring.</p>
+                </div>
+                <div class="deliverable-card">
+                    <h4>Assessor Guides</h4>
+                    <p>Comprehensive guidance for assessors on tool usage, ethical considerations, and instructions to promote fair and accessible candidate experiences.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Outcomes & Impact</h2>
+            <p>The assessment tool was delivered on schedule and received positive feedback from the client, who particularly valued:</p>
+            <ul>
+                <li>The clear rationale and evidence base supporting each design decision</li>
+                <li>The attention to fairness and accessibility throughout</li>
+                <li>The comprehensive assessor guidance that made implementation feasible</li>
+                <li>The behavioral specificity of the scoring frameworks</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Client Feedback:</strong></p>
+                <p>"Chaitanya set an excellent tone for meetings and managed expectations sensitively. The final delivery was outstanding, demonstrating careful listening and going above and beyond the original ask."</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>What I Learned</h2>
+            <p><strong>On Contracting & Boundaries:</strong> This project reinforced the critical importance of assertive contracting. My initial tendency was to try to meet the client's ambitious scope despite my reservations. Learning to push back professionally-grounded in ethical responsibilities and evidence-was perhaps the most valuable skill I developed.</p>
+            <p><strong>On Accessibility as Central:</strong> Rather than treating accessibility as a final "check" before delivery, I learned to embed fairness and accessibility considerations from the very beginning of the design process. This shift-from accessibility as accommodation to accessibility as foundational design principle-fundamentally changed how I approach all assessment work.</p>
+        </section>
+    </div>
+
+    <footer><p>© <span id="year"></span> Chaitanya Gupta · Occupational Psychologist</p></footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

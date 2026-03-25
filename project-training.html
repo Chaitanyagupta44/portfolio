@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work-Related Information Training | Chaitanya Gupta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; background-color: #fdfaf6; color: #2a2019; line-height: 1.6; }
+        nav { position: fixed; top: 0; left: 0; right: 0; background-color: rgba(253, 250, 246, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(139, 102, 71, 0.1); padding: 1.5rem 2rem; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Crimson Text', serif; font-size: 1.5rem; font-weight: 600; color: #8b6647; text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #5a4a3a; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: #8b6647; }
+        .hero { padding: 10rem 2rem 4rem; max-width: 1200px; margin: 0 auto; }
+        .hero h1 { font-family: 'Crimson Text', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 600; color: #2a2019; margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.1rem, 2vw, 1.3rem); color: #6a5a4a; margin-bottom: 2rem; }
+        .project-container { max-width: 1200px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 4rem; }
+        .main-content { max-width: 800px; }
+        .sidebar { position: sticky; top: 120px; align-self: start; }
+        .sidebar-section { background-color: #f8f4ed; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid #8b6647; }
+        .sidebar-section h3 { font-family: 'Crimson Text', serif; font-size: 1.1rem; color: #2a2019; margin-bottom: 0.75rem; }
+        .sidebar-section p, .sidebar-section ul { font-size: 0.9rem; color: #6a5a4a; line-height: 1.6; }
+        .sidebar-section ul { list-style: none; padding-left: 0; }
+        .sidebar-section li { margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative; }
+        .sidebar-section li:before { content: "•"; position: absolute; left: 0; color: #8b6647; font-weight: bold; }
+        .content-section { margin-bottom: 3rem; }
+        .content-section h2 { font-family: 'Crimson Text', serif; font-size: 1.8rem; color: #2a2019; margin-bottom: 1rem; }
+        .content-section h3 { font-family: 'Crimson Text', serif; font-size: 1.4rem; color: #2a2019; margin-bottom: 0.75rem; margin-top: 1.5rem; }
+        .content-section p { font-size: 1.05rem; line-height: 1.8; color: #5a4a3a; margin-bottom: 1.25rem; }
+        .content-section ul { margin-left: 1.5rem; margin-bottom: 1.25rem; }
+        .content-section li { font-size: 1.05rem; line-height: 1.8; color: #5a4a3a; margin-bottom: 0.5rem; }
+        .highlight-box { background-color: #f8f4ed; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #8b6647; margin: 2rem 0; }
+        .highlight-box h3 { font-family: 'Crimson Text', serif; font-size: 1.3rem; color: #2a2019; margin-bottom: 0.75rem; }
+        .quote { background-color: #f8f4ed; padding: 2rem; border-left: 4px solid #8b6647; margin: 2rem 0; font-style: italic; }
+        .quote p { font-size: 1.1rem; line-height: 1.7; color: #5a4a3a; margin-bottom: 0.75rem; }
+        .quote-author { font-style: normal; font-weight: 600; color: #8b6647; font-size: 0.95rem; }
+        .cta-section { background: linear-gradient(135deg, #8b6647 0%, #6a5240 100%); padding: 4rem 2rem; text-align: center; margin-top: 4rem; }
+        .cta-section h2 { font-family: 'Crimson Text', serif; font-size: 2rem; color: white; margin-bottom: 1.5rem; }
+        .cta-btn { display: inline-block; padding: 1rem 2rem; background-color: white; color: #8b6647; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }
+        @media (max-width: 968px) { .project-container { grid-template-columns: 1fr; gap: 2rem; } .sidebar { position: static; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">← Chaitanya Gupta</a>
+            <ul class="nav-links">
+                <li><a href="index.html">All Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Work-Related Information Training</h1>
+        <p class="hero-subtitle">Upskilling advisors to support vulnerable job-seekers through evidence-based coaching</p>
+    </section>
+
+    <div class="project-container">
+        <main class="main-content">
+            <div class="content-section">
+                <h2>The Challenge</h2>
+                <p>Front-line advisors coach vulnerable job-seekers with health conditions affecting their capacity for work. While expected to provide psychological coaching, most advisors had limited training. They needed upskilling on exploring functional ability using open-ended questioning techniques.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>My Approach</h2>
+                <h3>Training Design</h3>
+                <p>I designed a 90-minute training using:</p>
+                <ul>
+                    <li>Kolb's Experiential Learning Model (content → reflection → application)</li>
+                    <li>Egan's Skilled Helper Model for questioning techniques</li>
+                    <li>Kirkpatrick evaluation framework (Levels 1 & 2)</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h3>Training Objectives</h3>
+                    <ul>
+                        <li>Increase advisor knowledge and confidence in using open-ended questioning</li>
+                        <li>Explore functional ability in customer conversations</li>
+                        <li>Apply coaching psychology principles</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Impact</h2>
+                <ul>
+                    <li>Improved advisor confidence and skills in functional ability assessment</li>
+                    <li>Scalable training materials for organizational rollout</li>
+                    <li>Pilot for wider implementation across UK regions</li>
+                </ul>
+            </div>
+
+            <div class="quote">
+                <p>"The development of Chaitanya's skills in systematically developing a training product from an initial loose brief has been extremely useful. This provided experience beyond simply facilitating training."</p>
+                <p class="quote-author">- Supervising Occupational Psychologist</p>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>The Methods</h3>
+                <ul>
+                    <li>Training Needs Analysis</li>
+                    <li>Kolb's Experiential Learning</li>
+                    <li>Egan's Skilled Helper</li>
+                    <li>Kirkpatrick evaluation</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>My Role</h3>
+                <p>Occupational Psychology Consultant</p>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Context</h3>
+                <p><strong>Duration:</strong> 6 months</p>
+                <p><strong>Area:</strong> Learning & Development</p>
+            </div>
+        </aside>
+    </div>
+
+    <section class="cta-section">
+        <h2>Interested in working together?</h2>
+        <a href="/cdn-cgi/l/email-protection#2b52445e59054e464a42476b4e534a465b474e05484446" class="cta-btn">Get

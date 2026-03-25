@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaitanya Gupta - Occupational Psychologist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #fdfaf6;
+            color: #2a2019;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(253, 250, 246, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 102, 71, 0.1);
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.transparent {
+            background-color: transparent;
+            border-bottom: none;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #8b6647;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #5a4a3a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #8b6647;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 12rem 2rem 8rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 600;
+            color: #2a2019;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: #6a5a4a;
+            max-width: 700px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .tag {
+            padding: 0.5rem 1rem;
+            background-color: #f8f4ed;
+            color: #8b6647;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(139, 102, 71, 0.2);
+            font-weight: 500;
+        }
+
+        /* Current Role Section */
+        .current-role-section {
+            padding: 6rem 2rem;
+            background-color: #fdfaf6;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Crimson Text', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: #2a2019;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #6a5a4a;
+            margin-bottom: 3rem;
+            max-width: 700px;
+        }
+
+        .role-content {
+            max-width: 900px;
+        }
+
+        .role-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #5a4a3a;
+            margin-bottom: 1.5rem;
+        }
+
+        .responsibilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .responsibility-card {
+            background-color: #f8f4ed;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #8b6647;
+        }
+
+        .responsibility-card h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            color: #2a2019;
+            margin-bottom: 0.75rem;
+        }
+
+        .responsibility-card p {
+            font-size: 0.95rem;
+            color: #6a5a4a;
+            line-height: 1.6;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 6rem 2rem;
+            background-color: #f8f4ed;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.2rem;
+            background-color: transparent;
+            color: #8b6647;
+            border: 1px solid #8b6647;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: #8b6647;
+            color: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background-color: #fdfaf6;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(139, 102, 71, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(139, 102, 71, 0.15);
+        }
+
+        .project-image {
+            height: 240px;
+            overflow: hidden;
+            background-color: #e8dfd5;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-area {
+            font-size: 0.85rem;
+            color: #8b6647;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2a2019;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .project-description {
+            color: #6a5a4a;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .project-meta {
+            font-size: 0.85rem;
+            color: #8b6647;
+            margin-bottom: 0.5rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #8b6647 0%, #6a5240 100%);
+            color: white;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 6rem 2rem;
+            background-color: #fdfaf6;
+            text-align: center;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn-primary {
+            background-color: #8b6647;
+            color: white;
+            border: none;
+        }
+
+        .contact-btn-primary:hover {
+            background-color: #6a5240;
+        }
+
+        .contact-btn-secondary {
+            background-color: transparent;
+            color: #8b6647;
+            border: 2px solid #8b6647;
+        }
+
+        .contact-btn-secondary:hover {
+            background-color: #8b6647;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background-color: #f8f4ed;
+            border-top: 1px solid rgba(139, 102, 71, 0.1);
+            text-align: center;
+            color: #6a5a4a;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 10rem 1.5rem 6rem;
+            }
+
+            .responsibilities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Chaitanya Gupta</div>
+            <ul class="nav-links">
+                <li><a href="#role">Current Role</a></li>
+                <li><a href="#work">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Evidence-Based Practice<br/>in Occupational Psychology</h1>
+        <p>
+            Occupational Psychologist specializing in assessment design, 
+            learning interventions, and creating fair, evidence-based solutions for 
+            organizational challenges.
+        </p>
+        <div class="expertise-tags">
+            <span class="tag">Performance & Assessment</span>
+            <span class="tag">Learning & Development</span>
+            <span class="tag">Employee Relations</span>
+            <span class="tag">Wellbeing at Work</span>
+            <span class="tag">Organizational Development</span>
+        </div>
+    </section>
+
+    <!-- Current Role Section -->
+    <section id="role" class="current-role-section">
+        <div class="section-container">
+            <h2 class="section-title">What I Do</h2>
+            <p class="section-subtitle">
+                Work Psychologist | UK Government Department for Work and Pensions
+            </p>
+            
+            <div class="role-content">
+                <p>
+                    I currently work as a Work Psychologist within the Work and Health Services directorate, 
+                    providing specialist employment-related psychological advice, assessment, and support to 
+                    job-seeking customers and frontline colleagues including Work Coaches, Disability Employment 
+                    Advisers, and Employer Advisers.
+                </p>
+                <p>
+                    My day-to-day work involves applying occupational psychology across diverse contexts-from 
+                    designing one-to-one assessments for vulnerable job-seekers to facilitating group interventions 
+                    that build work-search skills and motivation. I support both customers progressing towards 
+                    employment and employed individuals sustaining their roles.
+                </p>
+
+                <div class="responsibilities-grid">
+                    <div class="responsibility-card">
+                        <h3>Individual Assessment & Support</h3>
+                        <p>
+                            Designing and delivering one-to-one interventions to assess employment-related support 
+                            needs for socially excluded, vulnerable, or disadvantaged job-seekers. Identifying suitable 
+                            job goals, work solutions, and technological support to help customers find, sustain, and 
+                            progress in work.
+                        </p>
+                    </div>
+
+                    <div class="responsibility-card">
+                        <h3>Group Interventions</h3>
+                        <p>
+                            Facilitating work-focused group interventions to help job-seeking customers build 
+                            work-search skills, confidence, and motivation. Creating psychologically-informed 
+                            approaches that support behaviour change and employment readiness.
+                        </p>
+                    </div>
+
+                    <div class="responsibility-card">
+                        <h3>Colleague Development</h3>
+                        <p>
+                            Designing and delivering training interventions to help colleagues increase their knowledge 
+                            and develop job-relevant skills-such as interviewing and coaching techniques-that improve 
+                            customer outcomes. Providing case conference facilitation and caseload management support.
+                        </p>
+                    </div>
+
+                    <div class="responsibility-card">
+                        <h3>Intervention Evaluation</h3>
+                        <p>
+                            Appraising the quality and appropriateness of interventions that DWP uses or is considering 
+                            for procurement. Applying evidence-based frameworks to evaluate effectiveness and inform 
+                            organizational decision-making.
+                        </p>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem;">
+                    I'm currently undertaking the Stage 2 Qualification in Occupational Psychology through the 
+                    British Psychology Society, with supervision and support from DWP. This role allows me to 
+                    apply psychological science to real-world challenges affecting some of the most vulnerable 
+                    individuals in society, while developing my practice across all core areas of occupational 
+                    psychology.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="work" class="projects-section">
+        <div class="section-container">
+            <h2 class="section-title">Consultancy Projects</h2>
+            <p class="section-subtitle">
+                Evidence-based interventions across the five core areas of occupational psychology
+            </p>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Areas</button>
+                <button class="filter-btn" data-filter="Performance & Assessment">Performance & Assessment</button>
+                <button class="filter-btn" data-filter="Learning & Development">Learning & Development</button>
+                <button class="filter-btn" data-filter="Employee Relations">Employee Relations</button>
+                <button class="filter-btn" data-filter="Wellbeing at Work">Wellbeing at Work</button>
+                <button class="filter-btn" data-filter="Organizational Development">Organizational Development</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Project 1: Assessment -->
+                <a href="project-assessment.html" class="project-card fade-in-up" data-area="Performance & Assessment" style="text-decoration: none; color: inherit;">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&fit=crop" alt="Oral Briefing Assessment">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-area">Performance & Assessment</div>
+                        <h3 class="project-title">Oral Briefing Assessment for UK Government Policy Recruitment</h3>
+                        <p class="project-description">
+                            Designed a fair and accessible verbal communication assessment tool for recruiting policy roles in the UK civil service. Focused on assessing candidate potential over experience while reducing adverse impact on minority candidates through evidence-based, accessibility-oriented design.
+                        </p>
+                        <div class="project-meta"><strong>Methods:</strong> Work sample validity, cognitive accessibility frameworks, fairness-focused selection methodology, neurodiversity considerations, structured scoring matrices</div>
+                        <div class="project-meta"><strong>Deliverables:</strong> Assessment tool, scoring matrices, assessor guides for junior and senior roles</div>
+                        <div class="project-meta"><strong>Duration:</strong> 6 months</div>
+                    </div>
+                </a>
+
+                <!-- Project 2: Training -->
+                <a href="project-training.html" class="project-card fade-in-up" data-area="Learning & Development" style="text-decoration: none; color: inherit; animation-delay: 0.1s">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&auto=format&fit=crop" alt="Training for Advisors">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-area">Learning & Development</div>
+                        <h3 class="project-title">Work-Related Information Training for Front-line Advisors</h3>
+                        <p class="project-description">
+                            Designed, delivered, and evaluated training for front-line advisors who coach vulnerable job-seekers. Upskilled advisors on exploring functional ability using open-ended questioning techniques, applying coaching psychology principles to improve support for customers with health conditions.
+                        </p>
+                        <div class="project-meta"><strong>Methods:</strong> Kolb's Experiential Learning Model, Egan's Skilled Helper Model, Kirkpatrick's evaluation framework (Levels 1 & 2), training needs analysis, process consultation</div>
+                        <div class="project-meta"><strong>Deliverables:</strong> 90-minute training sessions, evaluation surveys, facilitator guides</div>
+                        <div class="project-meta"><strong>Duration:</strong> 6 months</div>
+                    </div>
+                </a>
+
+                <!-- Project 3: Leadership -->
+                <a href="project-leadership.html" class="project-card fade-in-up" data-area="Employee Relations" style="text-decoration: none; color: inherit; animation-delay: 0.2s">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop" alt="Leadership Development">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-area">Employee Relations</div>
+                        <h3 class="project-title">Evidence-Based Leadership Tool for One-to-One Check-ins</h3>
+                        <p class="project-description">
+                            Designed evidence-informed leadership guides to improve the quality and consistency of Team Leader-led one-to-one check-ins. Created behaviour-focused tools that encourage high-quality leader behaviours around wellbeing, performance, and development discussions, replacing a cognitively burdensome 15-page document.
+                        </p>
+                        <div class="project-meta"><strong>Methods:</strong> GROW coaching framework, Self-Determination Theory, meta-analyses on effective leadership and feedback processes, organizational data analysis, process consultation</div>
+                        <div class="project-meta"><strong>Deliverables:</strong> Short behaviour-focused guide for Team Leaders, detailed usage guidance, ethical guidelines for one-to-ones</div>
+                        <div class="project-meta"><strong>Duration:</strong> 4 weeks</div>
+                    </div>
+                </a>
+
+                <!-- Project 4: Resilience -->
+                <a href="project-resilience.html" class="project-card fade-in-up" data-area="Wellbeing at Work" style="text-decoration: none; color: inherit; animation-delay: 0.3s">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop" alt="Resilience Intervention">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-area">Wellbeing at Work</div>
+                        <h3 class="project-title">Team-Based Resilience Intervention for Public Sector Staff</h3>
+                        <p class="project-description">
+                            Designed, implemented, and evaluated a sustainable resilience intervention for public sector employees experiencing high stress, anxiety, and emotional labour. Created a Team Leader-led intervention promoting evidence-based resilience behaviours through habit formation, allowing for scalability without sustained specialist involvement.
+                        </p>
+                        <div class="project-meta"><strong>Methods:</strong> Job Demands-Resources Model, Psychological Capital framework, PERMA model, staff survey analysis, joint diagnosis, RE-AIM evaluation framework</div>
+                        <div class="project-meta"><strong>Deliverables:</strong> Team Leader-led intervention materials, implementation guides, evaluation framework</div>
+                        <div class="project-meta"><strong>Context:</strong> Local office (100+ staff) in UK public sector organization</div>
+                    </div>
+                </a>
+
+                <!-- Project 5: Neurodiversity -->
+                <a href="project-neurodiversity.html" class="project-card fade-in-up" data-area="Organizational Development" style="text-decoration: none; color: inherit; animation-delay: 0.4s">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop" alt="Neurodiversity Work Design">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-area">Organizational Development</div>
+                        <h3 class="project-title">National Evidence Review: Neurodiversity-Inclusive Work Design</h3>
+                        <p class="project-description">
+                            Conducted systematic review of academic literature on neurodiversity at work for a national-level evidence-based report. Translated complex evidence into actionable, plain-language recommendations focused on system-level work redesign and inclusive organizational practices, moving beyond "fix-the-person" approaches.
+                        </p>
+                        <div class="project-meta"><strong>Methods:</strong> EPPI-style systematic review, AORTA appraisal framework, Job Demands-Resources theory, Procedural Justice Theory, Universal Design principles, thematic synthesis</div>
+                        <div class="project-meta"><strong>Deliverables:</strong> Evidence synthesis, work design recommendations for organizations and policymakers, good practice guidance across work functions</div>
+                        <div class="project-meta"><strong>Duration:</strong> 4 weeks</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="chaitanya-photo.jpg" alt="Chaitanya Gupta" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid rgba(255, 255, 255, 0.3);">
+            </div>
+            <h2 class="section-title">About Me</h2>
+            <p>
+                I'm a Occupational Psychologist with expertise in designing 
+                evidence-based solutions across the five core areas of occupational psychology. 
+                My work focuses on creating fair, accessible, and psychologically-informed 
+                interventions that support both organizational goals and individual wellbeing.
+            </p>
+            <p>
+                Currently working as a Work Psychologist within the UK government, I specialize in 
+                assessment design, learning and development interventions, and applying psychological 
+                principles to solve complex organizational challenges. My practice emphasizes ethical 
+                decision-making, rigorous evidence appraisal, and reducing adverse impact on vulnerable 
+                and minority groups.
+            </p>
+            <p>
+                I hold an MSc in Occupational Psychology and am undertaking the Stage 2 Qualification 
+                in Occupational Psychology through the British Psychology Society. My approach is 
+                grounded in consultation models, systematic evidence review, and a commitment to 
+                translating psychological science into practical, real-world impact.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle" style="margin: 0 auto 3rem;">
+                Interested in collaborating or learning more about my work? 
+                I'd love to hear from you.
+            </p>
+            
+            <div class="contact-buttons">
+                <a href="mailto:guptac44@gmail.com" class="contact-btn contact-btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Email Me
+                </a>
+                
+                <a href="https://www.linkedin.com/in/chaitanya-gupta-/" target="_blank" class="contact-btn contact-btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                    LinkedIn
+                </a>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© <span id="year"></span> Chaitanya Gupta · Occupational Psychologist</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.remove('transparent');
+            } else {
+                navbar.classList.add('transparent');
+            }
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    const area = card.getAttribute('data-area');
+                    if (filter === 'all' || area === filter) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavi
